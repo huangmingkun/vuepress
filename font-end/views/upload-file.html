@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Angular项目上传文件 | Home</title>
+    <meta name="description" content="vuepress学习过程及记录一些遇到的问题">
+    <link rel="icon" href="./assets/img/favicon/favicon.ico">
+    
+    <link rel="preload" href="/vuepress/assets/css/0.styles.78269250.css" as="style"><link rel="preload" href="/vuepress/assets/js/app.9fdf66ac.js" as="script"><link rel="preload" href="/vuepress/assets/js/2.9a42797b.js" as="script"><link rel="preload" href="/vuepress/assets/js/15.d6cc8a8b.js" as="script"><link rel="prefetch" href="/vuepress/assets/js/10.cf5adcd3.js"><link rel="prefetch" href="/vuepress/assets/js/11.543cb57f.js"><link rel="prefetch" href="/vuepress/assets/js/12.8a327f90.js"><link rel="prefetch" href="/vuepress/assets/js/13.bfb4331d.js"><link rel="prefetch" href="/vuepress/assets/js/14.514ff134.js"><link rel="prefetch" href="/vuepress/assets/js/16.683e9d68.js"><link rel="prefetch" href="/vuepress/assets/js/17.73f69d6b.js"><link rel="prefetch" href="/vuepress/assets/js/18.15b86135.js"><link rel="prefetch" href="/vuepress/assets/js/3.a10f1d7c.js"><link rel="prefetch" href="/vuepress/assets/js/4.347debc0.js"><link rel="prefetch" href="/vuepress/assets/js/5.ef555bd9.js"><link rel="prefetch" href="/vuepress/assets/js/6.7b7d52f6.js"><link rel="prefetch" href="/vuepress/assets/js/7.6c878b6a.js"><link rel="prefetch" href="/vuepress/assets/js/8.c452aa51.js"><link rel="prefetch" href="/vuepress/assets/js/9.d9cc5977.js">
+    <link rel="stylesheet" href="/vuepress/assets/css/0.styles.78269250.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/vuepress/" class="home-link router-link-active"><img src="/vuepress/assets/img/logo/logo.png" alt="Home" class="logo"> <span class="site-name can-hide">Home</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/huangmingkun" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/huangmingkun" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  vuepress官网
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/vuepress/documents/" class="sidebar-heading clickable"><span>vuepress安装搭建</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress/documents/views/start.html" class="sidebar-link">安装vuepress</a></li><li><a href="/vuepress/documents/views/layout.html" class="sidebar-link">vuepress布局</a></li><li><a href="/vuepress/documents/views/deploy.html" class="sidebar-link">部署</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/vuepress/font-end/" class="sidebar-heading clickable router-link-active open"><span>前端问题记录</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span></span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vuepress/font-end/views/adapter.html" class="sidebar-link">1.兼容ie浏览器方案</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/adapter.html#_1-1-google-chrome-frame" class="sidebar-link">1.1.Google chrome frame</a></li><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/adapter.html#_1-2-cfinstall" class="sidebar-link">1.2.cfInstall</a></li><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/adapter.html#_1-3-兼容ie具体实现方案" class="sidebar-link">1.3.兼容ie具体实现方案</a></li></ul></li><li><a href="/vuepress/font-end/views/deploy.html" class="sidebar-link">2.ie浏览器开发注意事项</a></li><li><a href="/vuepress/font-end/views/closure.html" class="sidebar-link">3.防抖和节流</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/closure.html#_3-1-防抖" class="sidebar-link">3.1.防抖</a></li><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/closure.html#_3-1-1-防抖优化搜索框" class="sidebar-link">3.1.1.防抖优化搜索框</a></li><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/closure.html#_3-2-节流" class="sidebar-link">3.2.节流</a></li></ul></li><li><a href="/vuepress/font-end/views/form.html" class="sidebar-link">4.表单验证</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/form.html#_4-1-限制表单只输入数字" class="sidebar-link">4.1.限制表单只输入数字</a></li></ul></li><li><a href="/vuepress/font-end/views/vue-tip.html" class="sidebar-link">5.Vue</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/vue-tip.html#_5-1vue使用技巧" class="sidebar-link">5.1Vue使用技巧</a></li></ul></li><li><a href="/vuepress/font-end/views/upload-file.html" class="active sidebar-link">6.上传文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/upload-file.html#方式一：使用angualar自带的angular-file-upload插件" class="sidebar-link">方式一：使用angualar自带的angular-file-upload插件</a></li><li class="sidebar-sub-header"><a href="/vuepress/font-end/views/upload-file.html#方式二：使用bootstrap的上传文件插件" class="sidebar-link">方式二：使用bootstrap的上传文件插件</a></li></ul></li><li><a href="/vuepress/font-end/views/vue-template.html" class="sidebar-link">7.Vue标准模板</a></li></ul></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="angular项目上传文件"><a href="#angular项目上传文件" class="header-anchor">#</a> Angular项目上传文件</h1> <h2 id="方式一：使用angualar自带的angular-file-upload插件"><a href="#方式一：使用angualar自带的angular-file-upload插件" class="header-anchor">#</a> 方式一：使用angualar自带的angular-file-upload插件</h2> <p>index.html页面引入</p> <div class="language-angular2html line-numbers-mode"><pre class="language-text"><code>&lt;script src=&quot;assets/global/plugins/angularjs/plugins/angular-file-upload/angular-file-upload.min.js&quot;&gt;&lt;/script&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language-angular2html line-numbers-mode"><pre class="language-text"><code>                  &lt;div class=&quot;tab-pane&quot; data-ng-class=&quot;{'active':count=='count_unusual'}&quot;
+                       data-ng-show=&quot;count=='count_unusual'&quot;&gt;
+                    &lt;label class=&quot;ui-upload btn btn_shadow blue pull-left&quot; style=&quot;width: auto;height: auto;margin-bottom: 20px&quot;&gt;
+                      &lt;img src=&quot;images/icon-download.png&quot; style=&quot;display: none&quot; class=&quot;padding-top-5 padding-btoom-5&quot;&gt;
+                      &lt;p class=&quot;margin-bottom-0 page-total&quot; style=&quot;color: #fff&quot;&gt;{{data.uploadReport}}&lt;/p&gt;
+                      &lt;p class=&quot;margin-bottom-0 font-red upload-text-p&quot; style=&quot;display: none&quot;&gt;{{data.fileSizeLimet}}&lt;/p&gt;
+                      &lt;input class=&quot;margin-top-6&quot; type=&quot;file&quot; nv-file-select=&quot;&quot; uploader=&quot;uploader&quot; multiple style=&quot;display: none;&quot;&gt;
+                    &lt;/label&gt;
+
+                    &lt;div class=&quot;unusualContent&quot; style=&quot;width: 100%;&quot;&gt;
+                      &lt;div style=&quot;width: 100%;height: 40px;background-color:#efefef;
+                                            display: flex;justify-content: space-between;align-items: center&quot;&gt;
+                        &lt;div style=&quot;width: 60%;text-align: left;text-indent: 20px&quot;&gt;{{data.reportName}}&lt;/div&gt;
+                        &lt;div style=&quot;width: 20%;text-align: left;text-indent: 20px&quot;&gt;{{data.uploadTime}}&lt;/div&gt;
+                        &lt;div style=&quot;width: 20%&quot;&gt;{{data.operation}}&lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class=&quot;file-lists-item&quot;
+                           data-ng-repeat=&quot;att in attachmentList track by $index&quot;
+                           ng-class=&quot;{'table-background':$index%2===0}&quot;&gt;
+                        &lt;div style=&quot;width: 60%;text-align: left&quot;&gt;{{att.realName}}&lt;/div&gt;
+                        &lt;div style=&quot;width: 20%;text-align: left&quot;&gt;{{att.createTime | date:'yyyy-MM-dd HH:mm'}}&lt;/div&gt;
+                        &lt;div style=&quot;width: 20%&quot;&gt;
+                          &lt;a style=&quot;padding-left: 10px;padding-right: 10px;&quot;
+                             class=&quot;mine-btn mine-btn-green&quot;
+                             ng-click=&quot;downUnusualList(att)&quot;&gt;{{data.download}}&lt;/a&gt;&lt;!--下载--&gt;
+                          &lt;a style=&quot;padding-left: 10px;padding-right: 10px;&quot;
+                             class=&quot;mine-btn mine-btn-green&quot;
+                             ng-click=&quot;deleteUnusualList(att)&quot;&gt;{{data.delete}}&lt;/a&gt;&lt;!--删除--&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div data-ng-if=&quot;true&quot; class=&quot;container-fluid&quot;
+                         data-ng-show=&quot;count=='count_unusual'&quot;&gt;
+                      &lt;div data-ng-class=&quot;paginationConfUnusual.totalItems &lt;= 0?'row pull-left' :'row pull-right'&quot;&gt;
+                        &lt;tm-pagination conf=&quot;paginationConfUnusual&quot;&gt;&lt;/tm-pagination&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><div class="language-angularjs line-numbers-mode"><pre class="language-text"><code>SystecApp.controller('conference_reportController', ['$rootScope', '$scope', 'settings', 'logger', '$filter', 'CdrService', 'MeetingService', 'UmeetingService', '$state', '$stateParams', 'OrgService', 'MeetingTagService', 'MeetingReserveFactory', 'baseUrl', 'MeetingReserve', 'VidoOrlocal', '$timeout', 'UserService', 'AttendeeService', 'MeetingStatisticsService','FileUploader','DeployService',
+  function ($rootScope, $scope, settings, logger, $filter, CdrService, MeetingService, UmeetingService, $state, $stateParams, OrgService, MeetingTagService, MeetingReserveFactory, baseUrl, MeetingReserve, VidoOrlocal, $timeout, UserService, AttendeeService, MeetingStatisticsService,FileUploader,DeployService) {
+    $scope.$on('$viewContentLoaded',
+      function () {
+        ComponentsPickers.init();
+      });
+    // init
+    $scope.init = function () {
+      $scope.uploadMaterial();
+      $scope.getUnusualList();
+    };
+    $scope.getUnusualList = function () {
+      DeployService.tclGetUnusualList({},function (data) {
+        // console.log(data)
+        if (data.message === 'OK' &amp;&amp; data.status === 200) {
+          $scope.attachmentList = []
+          //console.log(data.data)
+          var chunkArr = []
+          $scope.paginationConfUnusual.totalItems = data.data.length;
+          $scope.allAattachmentList = data.data
+          if(data.data.length &gt; 10) {
+            chunkArr = chunk(data.data,$scope.paginationConfUnusual.itemsPerPage)
+            //console.log(chunkArr)
+            //console.log($scope.paginationConfUnusual.currentPage)
+            $scope.attachmentList = chunkArr[$scope.paginationConfUnusual.currentPage - 1]
+          } else {
+            $scope.attachmentList = data.data
+          }
+          console.log('$scope.attachmentList', $scope.attachmentList)
+          //  logger.logSuccess(data.message)
+
+        } else {
+          logger.logError(data.message)
+        }
+      })
+    }
+    $scope.downUnusualList = function (att) {
+      MeetingReserveFactory.getDownloadOrExport(baseUrl.getUrl(&quot;attachment/download&quot; + &quot;?id=&quot; + att.id));
+      /*DeployService.tclDownUnusualList({id: att.id},function (data) {
+          // console.log(data)
+          if (data.message === 'OK' &amp;&amp; data.status === 200) {
+              console.log(data.data)
+              logger.logSuccess(data.message)
+          } else {
+              logger.logError(data.message)
+          }
+      })*/
+    }
+    $scope.deleteUnusualList = function (att) {
+      var indexModal = layer.confirm($rootScope.data.determineToDelete, {
+        btn: [$rootScope.data.confirm, $rootScope.data.cancel],
+        title: [$rootScope.data.hint, 'font-size:18px;']//按钮
+      }, function () {
+        DeployService.tclDeleteUnusualList({id: att.id},function (data) {
+          // console.log(data)
+          if (data.message === 'OK' &amp;&amp; data.status === 200) {
+            // console.log(data.data)
+            $scope.getUnusualList()
+            logger.logSuccess($rootScope.data.deleteSuccess)
+          } else {
+            logger.logError(data.message)
+          }
+        })
+        /* UmeetingService.deleteMeeting({uuid: meeting.uuid}, {}, function (data) {
+             if (data.status == 200) {
+                 $scope.loadingDelete_box = true;
+                 logger.logSuccess($rootScope.data.conferenceDeletionSuccessful);
+                 $scope.queryMeetings();
+                 $scope.calendar.fullCalendar('refetchEvents');
+
+                 // var paramit = { &quot;pageSize&quot;:$scope.paginationConf.itemsPerPage,&quot;pageNo&quot;:$scope.paginationConf.currentPage, &quot;userId&quot;:$scope.loginUserInfo.id } ;
+                 // meetingsWS.send(angular.toJson(paramit, true));
+
+             } else {
+                 $scope.loadingDelete_box = false;
+                 logger.logError(data.message);
+             }
+         });*/
+        layer.close(indexModal);
+      }, function () {
+        console.log('cancel');
+      });
+    }
+
+    // 上传会议材料
+    $scope.uploadMaterial = function (data) {
+      /* 实例化一个FileUploader对象 */
+      $scope.uploader = new FileUploader({
+        autoUpload: true,
+        /*以下是设置了两个必须的属性*/
+        url: baseUrl.getUrl('attachment/upload'),
+        queue: []
+        // queueLimit: 5
+      });
+      $scope.uploader.filters.push({
+        name: 'limitUpload',
+        fn: function(item) {
+          // item就是你上传的文件这里面你就可以写你需要筛选的条件，下面举一个例子，筛选文件的大小
+          console.log(item)
+          const isExceed = item.size / 1024 / 1024 &lt; 100;
+          if (!isExceed) {
+            logger.logError($rootScope.data.fileSizeLimet);
+          }
+          return isExceed ;
+        }
+      })
+      $scope.uploader.onAfterAddingFile = function(fileItem) {
+        fileItem.file.size = $scope.getFileSize(fileItem.file.size)
+      }
+      $scope.uploader.onBeforeUploadItem = function (fileItem, response, status) {
+        console.log(fileItem)
+        $scope.uploadSuccess = false;
+      },
+        $scope.uploader.onSuccessItem = function (fileItem, response, status) {
+          console.log(response)
+          if (response.status == 200 &amp;&amp; response.message === 'OK') {
+            $scope.uploadSuccess = true;
+            //fileItem.id = response.data.id;
+            fileItem.isSuccess = true;
+            // fileItem.type = response.data.type;
+            //$scope.attachmentIds[response.data.id] = response.data.id;
+            //  $scope.getMaterialId($scope.attachmentIds);
+            // $scope.attachmentList.push(response.data)
+            $scope.getUnusualList()
+            logger.logSuccess($rootScope.data.uploadReportSuccess)
+            console.log($scope.attachmentList)
+            // console.log($scope.meeting.attachmentList)
+
+          } else {
+            /*    $scope.uploader.queue.forEach(function (val, idx) {
+                    $scope.uploader.queue.splice(1,idx);
+                });*/
+            fileItem.isSuccess = false;
+            logger.logError(response.message);
+          }
+        };
+      $scope.uploader.onErrorItem = function (fileItem, response, status, headers) {
+        logger.logError($rootScope.data.fileUploadFailed);
+        $scope.uploadSuccess = true;
+      };
+    };
+    $scope.getFileSize = function (fileByte) {
+      var fileSizeByte = fileByte;
+      var fileSizeMsg = &quot;&quot;;
+      if (fileSizeByte &lt; 1048576) fileSizeMsg = (fileSizeByte / 1024).toFixed(2) + &quot;K&quot;;
+      else if (fileSizeByte == 1048576) fileSizeMsg = &quot;1M&quot;;
+      else if (fileSizeByte &gt; 1048576 &amp;&amp; fileSizeByte &lt; 1073741824) fileSizeMsg = (fileSizeByte / (1024 * 1024)).toFixed(2) + &quot;M&quot;;
+      else if (fileSizeByte &gt; 1048576 &amp;&amp; fileSizeByte == 1073741824) fileSizeMsg = &quot;1G&quot;;
+      else if (fileSizeByte &gt; 1073741824 &amp;&amp; fileSizeByte &lt; 1099511627776) fileSizeMsg = (fileSizeByte / (1024 * 1024 * 1024)).toFixed(2) + &quot;G&quot;;
+      else fileSizeMsg = &quot;文件超过1TB&quot;;
+      return fileSizeMsg;
+    }
+    // 生成材料id
+    $scope.getMaterialId = function (materialObj) {
+      var materialIdArr = [];
+      for (var key in materialObj) {
+        materialIdArr.push(materialObj[key]); //属性
+      }
+      $scope.meeting.attachmentIds = materialIdArr.join(',');
+      console.log($scope.meeting.attachmentIds)
+    };
+    // 删除材料
+    $scope.deleteMaterial = function (index, item, num) {
+      if (num == 0) {
+        $scope.uploader.queue.splice(index, 1);
+      } else {
+        $scope.uploaderData.splice(index, 1);
+        $scope.attachmentList.splice(index, 1);
+      }
+      delete $scope.attachmentIds[item.id];
+      $scope.getMaterialId($scope.attachmentIds);
+    };
+  }]);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br></div></div><h2 id="方式二：使用bootstrap的上传文件插件"><a href="#方式二：使用bootstrap的上传文件插件" class="header-anchor">#</a> 方式二：使用bootstrap的上传文件插件</h2> <div class="language-angular2html line-numbers-mode"><pre class="language-text"><code>&lt;div class=&quot;page-bar&quot; data-ng-init=&quot;init()&quot;&gt;
+    &lt;ul class=&quot;page-breadcrumb&quot;&gt;
+        &lt;li&gt;
+            &lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;
+            &lt;a href=&quot;/layout/conference/mine&quot;&gt;{{data.index}}&lt;/a&gt;
+            &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;javascript:void (0)&quot;&gt;{{data.systemManage}}&lt;/a&gt;
+            &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;javascript:void (0)&quot;&gt;{{data.Document}}&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;portlet light&quot;&gt;
+    &lt;div class=&quot;portlet-title&quot;&gt;
+        &lt;!--上传文件--&gt;
+        &lt;div class=&quot;&quot;&gt;
+            &lt;a id=&quot;privilegeManageDocAddButton&quot; style=&quot;display:none;&quot; href=&quot;javascript:;&quot;
+               class=&quot;btn blue btn_shadow pull-left&quot; data-ng-click=&quot;openUploadModal()&quot;&gt;
+                &lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;{{data.uploadFile}}
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;hr class=&quot;margin-bottom-5&quot;&gt;
+    &lt;div class=&quot;portlet-body&quot;&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;col-lg-12&quot;&gt;
+                &lt;table class=&quot;table table-hover table-light&quot;&gt;
+                    &lt;thead class=&quot;bg-light-grey&quot;&gt;
+                    &lt;tr class=&quot;uppercase&quot;&gt;
+                        &lt;th&gt;{{data.fileName}}&lt;/th&gt;
+                        &lt;th&gt;{{data.size}}&lt;/th&gt;
+                        &lt;th&gt;{{data.type}}&lt;/th&gt;
+                        &lt;th ng-if=&quot;hasWritePrivilege&quot;&gt;{{data.operation}}&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                    &lt;tr class=&quot;file-lists&quot; data-ng-if=&quot;fileList.length !==0&quot; ng-repeat=&quot;file in fileList&quot;&gt;
+                        &lt;td class=&quot;file-name&quot; title=&quot;{{file.name}}&quot;&gt;
+                            {{file.name}}
+                        &lt;/td&gt;
+                        &lt;td class=&quot;text_center&quot;&gt;{{file.size}}&lt;/td&gt;
+                        &lt;td class=&quot;text_center&quot;&gt;{{file.fileExtension}}&lt;/td&gt;
+                        &lt;td ng-if=&quot;hasWritePrivilege&quot; class=&quot;file-delete text_center&quot; ng-click=&quot;deleteFile(file)&quot;&gt;删除&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr data-ng-if=&quot;fileList.length === 0&quot;&gt;&lt;td&gt;暂无数据&lt;/td&gt;&lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--上传文件弹窗--&gt;
+&lt;div class=&quot;modal fade in upload-file-modal&quot; id=&quot;upload-file&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; style=&quot;margin-top: 90px;&quot;&gt;
+    &lt;div style=&quot;width: 540px;&quot; class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&lt;/button&gt;
+                &lt;h4 class=&quot;modal-title&quot;&gt;{{data.uploadFile1}}&lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;div class=&quot;container-fluid padding-left padding-right&quot;&gt;
+                    &lt;form id=&quot;upload-file-form&quot; ENCTYPE=&quot;multipart/form-data&quot;&gt;
+                        &lt;div class=&quot;fileinput fileinput-new&quot; data-provides=&quot;fileinput&quot;&gt;
+                            &lt;div class=&quot;user-edit-image-buttons pull-left&quot;&gt;
+                                &lt;span class=&quot;btn btn-azure btn-file btn_shadow blue&quot;&gt;
+                                    &lt;span class=&quot;fileinput-new&quot;&gt;&lt;i class=&quot;fa fa-picture&quot;&gt;&lt;/i&gt;{{data.selectFile}}&lt;/span&gt;
+                                    &lt;span class=&quot;fileinput-exists&quot;&gt;&lt;i class=&quot;fa fa-picture&quot;&gt;&lt;/i&gt;{{data.reselect}}&lt;/span&gt;
+                                    &lt;input type=&quot;file&quot; id=&quot;filelayout&quot; name=&quot;file&quot;&gt;
+                                &lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;fileinput-preview fileinput-exists btn_shadow pull-left margin-left-20&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/form&gt;
+                &lt;/div&gt;
+                &lt;button class=&quot;btn blue upload-file-btn&quot; data-ng-click=&quot;uploadFileConfirm()&quot;
+                        data-ng-disabled=&quot;isDisabled&quot;&gt;{{data.confirm}}&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+    body.dragging, body.dragging * {
+        cursor: move !important;
+    }
+    .uppercase th {
+        text-align: center;
+    }
+    .file-lists .file-delete {
+        color: #3aa2ff !important;
+        cursor: pointer;
+    }
+    .file-lists .file-name {
+        max-width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .fileinput-preview {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 35px;
+        max-width: 400px;
+        line-height: 35px;
+        color: #ba1f1f;
+    }
+    .modal-body .upload-file-btn {
+        margin-top: 20px;
+        margin-left: 200px;
+        width: 70px !important;
+    }
+&lt;/style&gt;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br></div></div><div class="language-angular2 line-numbers-mode"><pre class="language-text"><code>SystecApp.controller(
+  'manage_documentController',
+  ['$rootScope', '$scope', 'logger', 'baseUrl', 'FileService','PrivilegeService',
+      function ($rootScope, $scope, logger, baseUrl, FileService, PrivilegeService
+      ) {
+          $scope.$on('$viewContentLoaded', function () {
+              $rootScope.settings.layout.pageSidebarClosed = false;
+          });
+
+          $scope.init = function () {
+              $scope.isDisabled = false; // 默认启用上传按钮
+              initPrivilige(); // 查询用户写权限
+              $scope.fileList = [];
+              queryFiles(); // 查询文件列表
+          };
+
+          //获取用户权限，无写权限时不给操作（页面控制） 0有写权限，1没权限
+          $scope.hasWritePrivilege = false;
+          function initPrivilige () {
+              PrivilegeService.queryRoleAndPrivilegeBySessionId(function (data) {
+                  data.data.forEach(function (val) {
+                      if (val.privilegeId == 20) {
+                          $scope.hasWritePrivilege = val.isWrite === 0;
+                      }
+                  })
+              })
+          }
+
+          // 获取文件列表
+          function queryFiles() {
+              FileService.findFile().$promise
+                .then(function (res) {
+                    if (res.status === 200) {
+                        $scope.fileList = res.data;
+                        console.log(' $scope.fileList', $scope.fileList.length);
+                    } else {
+                        logger.logError(res.message);
+                    }
+                });
+          }
+
+          // 打开上传文件弹窗
+          $scope.openUploadModal = function () {
+              $('.upload-file-modal').modal('show');
+              // 清空input的内容
+              $(&quot;.fileinput-preview&quot;)[0].innerText = '';
+              $(&quot;#filelayout&quot;).attr(&quot;value&quot;, &quot;&quot;);
+              $(&quot;#fileUrllayout&quot;).attr(&quot;value&quot;, &quot;&quot;);
+          };
+
+          // 上传文件提交前验证
+          $scope.uploadFileConfirm = function () {
+              var filelayoutName = $(&quot;#filelayout&quot;).val();
+              var f = document.getElementById(&quot;filelayout&quot;).files;
+              // 获取文件名的后缀名
+              var fileGs = filelayoutName.substring(filelayoutName.lastIndexOf('.') + 1, filelayoutName.length);
+              // 提示不能为空
+              if (filelayoutName === '') {
+                  logger.logWarning($rootScope.data.chooseFileTip);
+                  return;
+              }
+              // 不能上传超过50m的文件
+              if (f[0].size &gt; 50 * 1000 * 1000) {
+                  logger.logWarning($rootScope.data.overFileSize);
+                  // 清空文件input框
+                  clearFileInput();
+                  return;
+              }
+              // 限制上传文件的后缀名
+              var validFiles = ['pdf', 'doc', 'docx', 'ppt', 'pptx'];
+              var isValidFile = validFiles.indexOf(fileGs) &gt; -1;
+              if (isValidFile) {
+                  // pdf、word、PPT
+                  // 赋值给input框---提交时用
+                  $(&quot;#fileUrllayout&quot;).attr(&quot;value&quot;, filelayoutName);
+              } else {
+                  // 非pdf、word、PPT
+                  logger.logWarning($rootScope.data.enableFileName);
+                  // 清空文件input框
+                  clearFileInput();
+                  return;
+              }
+              $scope.isDisabled = true; // 点击上传后，禁用确定按钮
+              requestUploadFile(baseUrl.getUrl('file/uploadFile'));
+          };
+
+          // 文件提交事件
+          function requestUploadFile(urlName) {
+              var url = urlName;
+              $(function () {
+                  $(&quot;#upload-file-form&quot;).ajaxSubmit({
+                      type: &quot;post&quot;,
+                      processData: false,//processData的默认值是true。用于对data参数进行序列化处理。
+                      url: url,
+                      success: function (res) {
+                          if (res.status == undefined || res.status == null) {
+                              logger.logError($rootScope.data.operatePermission);
+                              return;
+                          }
+                          if (res.status === 200) {
+                              // 成功后隐藏弹出框
+                              $('.upload-file-modal').modal('hide');
+                              logger.logSuccess('上传成功');
+                              $scope.isDisabled = false; // 上传成功后，启用确定按钮
+                              queryFiles();
+                          } else {
+                              logger.logError(res.message);
+                          }
+                      }
+                  });
+              });
+          }
+
+          // 清空文件input框
+          function clearFileInput() {
+              $(&quot;.fileinput-preview&quot;)[0].innerText = '';
+              $(&quot;#filelayout&quot;).attr(&quot;value&quot;, &quot;&quot;);
+              $(&quot;#fileUrllayout&quot;).attr(&quot;value&quot;, &quot;&quot;);
+          }
+
+          // 删除文件
+          $scope.deleteFile = function (file) {
+              var modalBtn = [$rootScope.data.confirm, $rootScope.data.cancel];
+              var indexModal = layer.confirm(
+                '确定删除文件？',
+                {
+                    btn: modalBtn,
+                    btnAlign: 'c',
+                    title: [$rootScope.data.hint, 'font-size:18px;'] // 按钮
+                },
+                function () {
+                    $scope.loading_box = true;
+                    var fileIds = file.id + '';
+                    FileService.deleteFile({fileIds: fileIds}).$promise
+                      .then(function (res) {
+                          $scope.loading_box = false;
+                          if (res.status === 200) {
+                              logger.logSuccess('删除成功');
+                              queryFiles();
+                          } else {
+                              logger.logError(res.message);
+                          }
+                      });
+                    layer.close(indexModal);
+                },
+                function () {
+                    console.log('cancel');
+                }
+              );
+          };
+      }
+  ]
+);
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br></div></div><div class="language-angularjs line-numbers-mode"><pre class="language-text"><code>SystecApp.factory(&quot;FileService&quot;, ['$resource','$rootScope','baseUrl',
+        function($resource,$rootScope,baseUrl){
+            var  base_url = baseUrl.getUrl(&quot;file&quot;);
+            return $resource('', {}, {
+                findFile:{method:&quot;POST&quot;,url:base_url+&quot;/findFile&quot;},
+                uploadFile:{method:&quot;POST&quot;,url:base_url+&quot;/uploadFile&quot;},
+                downloadFile:{method:&quot;POST&quot;,url:base_url+&quot;/downloadFile&quot;},
+                deleteFile:{method:&quot;POST&quot;,url:base_url+&quot;/deleteFile&quot;},
+            });
+        }
+    ])
+
+;
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vuepress/font-end/views/vue-tip.html" class="prev">5.Vue</a></span> <span class="next"><a href="/vuepress/font-end/views/vue-template.html">7.Vue标准模板</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/vuepress/assets/js/app.9fdf66ac.js" defer></script><script src="/vuepress/assets/js/2.9a42797b.js" defer></script><script src="/vuepress/assets/js/15.d6cc8a8b.js" defer></script>
+  </body>
+</html>
